@@ -1,0 +1,24 @@
+{
+  "name": "goslack",
+  "version": "1.0.0",
+  "description": "Send notifications from a Go CI server to Slack webhook",
+  "main": "feed.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/alisdair/goslack.git"
+  },
+  "dependencies": {
+    "feedparser": "~0.16.6",
+    "hiredis": "~0.1.16",
+    "redis": "~0.10.1",
+    "request": "~2.34.0",
+    "strftime": "~0.8.0",
+    "dotenv": "~0.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alisdair McDiarmid <alisdair@mcdiarmid.org>",
+  "license": "MIT"
+}
