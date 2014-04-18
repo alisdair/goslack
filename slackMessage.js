@@ -35,7 +35,7 @@ var message = function(item) {
   author = item.author;
   notification = findStatus(item.categories) === 'passed' ? '' : '@everyone: '
 
-  return '<' + link + '|' + notification  +
+  return notification + '<' + link + '|' +
     'Build for ' + title + '>: ' + stage +
     decorator[status] + ' ' + status + ' (' + date + ")\n" + author;
 };
