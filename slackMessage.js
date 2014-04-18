@@ -33,9 +33,8 @@ var message = function(item) {
   link = item.link;
   date = strftime("%H:%M %b %d", item.date);
   author = item.author;
-  notification = findStatus(item.categories) === 'passed' ? '' : '@everyone: '
 
-  return notification + '<' + link + '|' +
+  return '<' + link + '|' +
     'Build for ' + title + '>: ' + stage +
     decorator[status] + ' ' + status + ' (' + date + ")\n" + author;
 };

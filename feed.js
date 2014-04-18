@@ -70,7 +70,13 @@ parser.on('readable', function() {
 
       // Otherwise, add it, and if successful, post to Slack.
       client.sadd(redisKey, guid, function(err, reply) {
-        request.post(webhook, { json: { text: message } });
+        var body = {
+          text: message
+        };
+        if (!(/:thumbsup:/.test(message))) {
+          body.channel = '#general';
+        }
+        request.post(webhook, { json: body });
         client.quit();
       });
     });
