@@ -2,7 +2,7 @@ var strftime = require('strftime');
 
 var findStatus = function(categories) {
   return categories.filter(function(c) {
-    return c == 'passed' || c == 'failed'
+    return c === 'passed' || c === 'failed'
   })[0];
 }
 
@@ -33,8 +33,10 @@ var message = function(item) {
   link = item.link;
   date = strftime("%H:%M %b %d", item.date);
   author = item.author;
+  notification = findStatus(item.categories) === 'passed' ? '' : '@everyone: '
 
-  return '<' + link + '|Build for ' + title + '>: ' + stage +
+  return '<' + link + '|' + notification  +
+    'Build for ' + title + '>: ' + stage +
     decorator[status] + ' ' + status + ' (' + date + ")\n" + author;
 };
 
